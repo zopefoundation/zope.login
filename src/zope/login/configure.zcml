@@ -1,0 +1,15 @@
+<configure xmlns="http://namespaces.zope.org/zope">
+
+  <adapter
+      factory=".http.BasicAuthAdapter"
+      provides="zope.authentication.interfaces.ILoginPassword"
+      for="zope.publisher.interfaces.http.IHTTPCredentials"
+      />
+
+  <adapter
+      factory=".ftp.FTPAuth"
+      provides="zope.authentication.interfaces.ILoginPassword"
+      for="zope.publisher.interfaces.ftp.IFTPCredentials"
+      />
+
+</configure>
