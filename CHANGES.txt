@@ -1,7 +1,8 @@
 Changelog
 =========
 
-1.0 (unreleased)
-----------------
+1.0.0 (2009-12-31)
+------------------
 
-- ...
+- Extracted BasicAuthAdapter and FTPAuth adapters from zope.publisher. They
+  should have never gone into that package in the first place.
