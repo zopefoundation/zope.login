@@ -11,15 +11,13 @@
 # FOR A PARTICULAR PURPOSE.
 #
 ##############################################################################
-"""FTP Authentication Test
 
-$Id$
-"""
-from unittest import TestCase, TestSuite, main, makeSuite
-from zope.publisher.interfaces.ftp import IFTPCredentials
+from unittest import TestCase
+
 from zope.interface import implements
-
 from zope.publisher.ftp import FTPAuth
+from zope.publisher.interfaces.ftp import IFTPCredentials
+
 
 class FTPCredentials(object):
     __doc__ = IFTPCredentials.__doc__
@@ -53,11 +51,3 @@ class Test(TestCase):
         auth = FTPAuth(request)
         self.assertEqual(auth.getLogin(), None)
         self.assertEqual(auth.getPassword(), None)
-
-def test_suite():
-    return TestSuite((
-        makeSuite(Test),
-        ))
-
-if __name__=='__main__':
-    main(defaultTest='test_suite')

@@ -16,6 +16,7 @@ from zope.authentication.loginpassword import LoginPassword
 from zope.component import adapts
 from zope.publisher.interfaces.ftp import IFTPCredentials
 
+
 class FTPAuth(LoginPassword):
     """ILoginPassword adapter for handling common FTP authentication."""
 

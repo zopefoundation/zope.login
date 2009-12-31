@@ -11,13 +11,11 @@
 # FOR A PARTICULAR PURPOSE.
 #
 ##############################################################################
-"""Test Basic Authentication Adapter
 
-$Id$
-"""
-import unittest
+from unittest import TestCase
 
 from zope.publisher.http import BasicAuthAdapter
+
 
 class Request(object):
 
@@ -32,7 +30,7 @@ class Request(object):
         self.challenge = challenge
 
 
-class Test(unittest.TestCase):
+class Test(TestCase):
 
     def testBasicAuthAdapter(self):
         r = Request(None)
@@ -49,10 +47,3 @@ class Test(unittest.TestCase):
         a = BasicAuthAdapter(r)
         a.needLogin("tim")
         self.assertEqual(r.challenge, 'basic realm="tim"')
-
-def test_suite():
-    loader=unittest.TestLoader()
-    return loader.loadTestsFromTestCase(Test)
-
-if __name__=='__main__':
-    unittest.TextTestRunner().run(test_suite())
