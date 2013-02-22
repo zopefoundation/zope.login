@@ -53,6 +53,7 @@ setup(name='zope.login',
                         'zope.interface',
                         'zope.publisher',
                         ],
+      test_suite='zope.login',
       include_package_data = True,
       zip_safe = False,
       )
