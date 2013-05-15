@@ -2,4 +2,5 @@
 .tox
 bin
 develop-eggs
-src/zope.login.egg-info
+*.pyc
+*.egg-info
