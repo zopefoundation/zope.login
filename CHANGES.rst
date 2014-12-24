@@ -4,6 +4,8 @@ Changelog
 2.0.0 (unreleased)
 ------------------
 
+- Add support for testing on Travis.
+
 - Add support for Python 3.3
 
 - Replace deprecated ``zope.interface.implements`` usage with equivalent
