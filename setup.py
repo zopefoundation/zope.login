@@ -16,7 +16,8 @@ import os
 from setuptools import setup, find_packages
 
 def read(*rnames):
-    return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
+    with open(os.path.join(os.path.dirname(__file__), *rnames)) as f:
+        return f.read()
 
 setup(name='zope.login',
       version = '2.0.0a1',
@@ -24,9 +25,9 @@ setup(name='zope.login',
       author_email='zope-dev@zope.org',
       description='Login helpers for zope.publisher / authentication.',
       long_description=(
-          read('README.txt')
+          read('README.rst')
           + '\n' +
-          read('CHANGES.txt')
+          read('CHANGES.rst')
           ),
       keywords = "zope login authentication",
       classifiers = [

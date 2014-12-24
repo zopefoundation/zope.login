@@ -4,12 +4,12 @@ Changelog
 2.0.0 (unreleased)
 ------------------
 
-- Replaced deprecated ``zope.interface.implements`` usage with equivalent
+- Add support for Python 3.3
+
+- Replace deprecated ``zope.interface.implements`` usage with equivalent
   ``zope.interface.implementer`` decorator.
 
-- Dropped support for Python 2.4 and 2.5.
-
-- Added support for Python 3.3
+- Drop support for Python 2.4 and 2.5.
 
 
 1.0.0 (2009-12-31)
