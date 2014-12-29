@@ -26,7 +26,7 @@ setup(name='zope.login',
       description='Login helpers for zope.publisher / authentication.',
       long_description=(
           read('README.rst')
-          + '\n' +
+          + '\n\n' +
           read('CHANGES.rst')
           ),
       keywords = "zope login authentication",
