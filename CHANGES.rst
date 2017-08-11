@@ -1,15 +1,18 @@
-Changes
-=======
+=========
+ Changes
+=========
 
 2.1.0 (unreleased)
-------------------
+==================
 
-- Add support for Python 3.5.
+- Add support for Python 3.5 and 3.6.
 
-- Drop support for Python 2.6.
+- Drop support for Python 2.6 and 3.3.
+
+- Host documentation at https://zopelogin.readthedocs.io/
 
 2.0.0 (2014-12-24)
-------------------
+==================
 
 - Add support for PyPy and PyPy3.
 
@@ -26,7 +29,7 @@ Changes
 
 
 1.0.0 (2009-12-31)
-------------------
+==================
 
 - Extracted BasicAuthAdapter and FTPAuth adapters from zope.publisher. They
   should have never gone into that package in the first place.

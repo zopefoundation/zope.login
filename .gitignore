@@ -4,3 +4,6 @@ bin
 develop-eggs
 *.pyc
 *.egg-info
+.coverage
+htmlcov/
+docs/_build/
