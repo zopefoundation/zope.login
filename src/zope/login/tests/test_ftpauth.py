@@ -12,10 +12,11 @@
 #
 ##############################################################################
 
-from unittest import TestCase
+import unittest
+
+from zope.testing import cleanup
 
 from zope.interface import implementer
-from zope.publisher.ftp import FTPAuth
 from zope.publisher.interfaces.ftp import IFTPCredentials
 
 
@@ -35,11 +36,15 @@ class FTPCredentials(object):
         self.unauth += 1
 
 
-class Test(TestCase):
+class Test(unittest.TestCase):
+
+    def _makeOne(self, request):
+        from zope.publisher.ftp import FTPAuth
+        return FTPAuth(request)
 
     def test(self):
         request = FTPCredentials(('bob', '123'))
-        auth = FTPAuth(request)
+        auth = self._makeOne(request)
         self.assertEqual(auth.getLogin(), 'bob')
         self.assertEqual(auth.getPassword(), '123')
 
@@ -48,6 +53,19 @@ class Test(TestCase):
         self.assertEqual(request.unauth, unauth+1)
 
         request = FTPCredentials(None)
-        auth = FTPAuth(request)
+        auth = self._makeOne(request)
         self.assertEqual(auth.getLogin(), None)
         self.assertEqual(auth.getPassword(), None)
+
+
+class TestConfigured(cleanup.CleanUp,
+                     Test):
+
+    def setUp(self):
+        from zope.configuration import xmlconfig
+        import zope.login
+        xmlconfig.file('configure.zcml', zope.login)
+
+    def _makeOne(self, request):
+        from zope.authentication.interfaces import ILoginPassword
+        return ILoginPassword(request)

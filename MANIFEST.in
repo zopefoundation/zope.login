@@ -3,4 +3,10 @@ include *.txt
 include bootstrap.py
 include buildout.cfg
 include MANIFEST.in
+include .coveragerc
+include tox.ini
+include .travis.yml
+recursive-include docs *.py
+recursive-include docs *.rst
+recursive-include docs Makefile
 recursive-include src *.zcml *.txt

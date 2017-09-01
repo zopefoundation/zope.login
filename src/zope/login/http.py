@@ -13,14 +13,17 @@
 ##############################################################################
 
 from zope.authentication.loginpassword import LoginPassword
-from zope.component import adapts
+from zope.component import adapter
 from zope.publisher.interfaces.http import IHTTPCredentials
 
-
+@adapter(IHTTPCredentials)
 class BasicAuthAdapter(LoginPassword):
-    """ILoginPassword adapter for handling HTTP Basic authentication"""
+    """
+    ILoginPassword adapter for handling HTTP Basic authentication.
 
-    adapts(IHTTPCredentials)
+    Adapts :class:`zope.publisher.interfaces.http.IHTTPCredentials`
+    into :class:`zope.authentication.interfaces.ILoginPassword`.
+    """
 
     def __init__(self, request):
         self.__request = request

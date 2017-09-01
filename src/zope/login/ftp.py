@@ -13,14 +13,17 @@
 ##############################################################################
 
 from zope.authentication.loginpassword import LoginPassword
-from zope.component import adapts
+from zope.component import adapter
 from zope.publisher.interfaces.ftp import IFTPCredentials
 
-
+@adapter(IFTPCredentials)
 class FTPAuth(LoginPassword):
-    """ILoginPassword adapter for handling common FTP authentication."""
+    """
+    ILoginPassword adapter for handling common FTP authentication.
 
-    adapts(IFTPCredentials)
+    Adapts :class:`zope.publisher.interfaces.ftp.IFTPCredentials`
+    into :class:`zope.authentication.interfaces.ILoginPassword`.
+    """
 
     def __init__(self, request):
         self.__request = request
