@@ -29,6 +29,7 @@ class Request(object):
         return self.lpw
 
     challenge = None
+
     def unauthorized(self, challenge):
         self.challenge = challenge
 
@@ -55,12 +56,14 @@ class Test(unittest.TestCase):
         a.needLogin("tim")
         self.assertEqual(r.challenge, 'basic realm="tim"')
 
+
 class TestConfigured(cleanup.CleanUp,
                      Test):
 
     def setUp(self):
-        import zope.login
         from zope.configuration import xmlconfig
+
+        import zope.login
         xmlconfig.file('configure.zcml', zope.login)
 
     def _makeOne(self, request):
