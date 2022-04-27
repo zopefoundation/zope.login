@@ -14,10 +14,9 @@
 
 import unittest
 
-from zope.testing import cleanup
-
 from zope.interface import implementer
 from zope.publisher.interfaces.ftp import IFTPCredentials
+from zope.testing import cleanup
 
 
 @implementer(IFTPCredentials)
@@ -62,8 +61,8 @@ class TestConfigured(cleanup.CleanUp,
                      Test):
 
     def setUp(self):
-        from zope.configuration import xmlconfig
         import zope.login
+        from zope.configuration import xmlconfig
         xmlconfig.file('configure.zcml', zope.login)
 
     def _makeOne(self, request):

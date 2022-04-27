@@ -13,10 +13,11 @@
 ##############################################################################
 
 import unittest
-from zope.testing import cleanup
 
 from zope.interface import implementer
 from zope.publisher.interfaces.http import IHTTPCredentials
+from zope.testing import cleanup
+
 
 @implementer(IHTTPCredentials)
 class Request(object):
@@ -58,8 +59,8 @@ class TestConfigured(cleanup.CleanUp,
                      Test):
 
     def setUp(self):
-        from zope.configuration import xmlconfig
         import zope.login
+        from zope.configuration import xmlconfig
         xmlconfig.file('configure.zcml', zope.login)
 
     def _makeOne(self, request):

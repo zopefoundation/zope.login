@@ -16,6 +16,7 @@ from zope.authentication.loginpassword import LoginPassword
 from zope.component import adapter
 from zope.publisher.interfaces.http import IHTTPCredentials
 
+
 @adapter(IHTTPCredentials)
 class BasicAuthAdapter(LoginPassword):
     """
