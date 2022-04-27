@@ -23,7 +23,6 @@ from zope.testing import cleanup
 class FTPCredentials(object):
     __doc__ = IFTPCredentials.__doc__
 
-
     def __init__(self, credentials):
         self.credentials = credentials
 
@@ -31,6 +30,7 @@ class FTPCredentials(object):
         return self.credentials
 
     unauth = 0
+
     def unauthorized(self, challenge):
         self.unauth += 1
 
@@ -49,7 +49,7 @@ class Test(unittest.TestCase):
 
         unauth = request.unauth
         auth.needLogin('xxx')
-        self.assertEqual(request.unauth, unauth+1)
+        self.assertEqual(request.unauth, unauth + 1)
 
         request = FTPCredentials(None)
         auth = self._makeOne(request)
@@ -61,8 +61,9 @@ class TestConfigured(cleanup.CleanUp,
                      Test):
 
     def setUp(self):
-        import zope.login
         from zope.configuration import xmlconfig
+
+        import zope.login
         xmlconfig.file('configure.zcml', zope.login)
 
     def _makeOne(self, request):
