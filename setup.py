@@ -25,7 +25,7 @@ def read(*rnames):
 
 setup(
     name='zope.login',
-    version='2.3.dev0',
+    version='3.0.dev0',
     author='Zope Foundation and Contributors',
     author_email='zope-dev@zope.org',
     description='Login helpers for zope.publisher / authentication.',
