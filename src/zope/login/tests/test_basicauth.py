@@ -20,7 +20,7 @@ from zope.testing import cleanup
 
 
 @implementer(IHTTPCredentials)
-class Request(object):
+class Request:
 
     def __init__(self, lpw):
         self.lpw = lpw

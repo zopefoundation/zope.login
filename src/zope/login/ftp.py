@@ -33,7 +33,7 @@ class FTPAuth(LoginPassword):
             login, password = None, None
         else:
             login, password = lpw
-        super(FTPAuth, self).__init__(login, password)
+        super().__init__(login, password)
 
     def needLogin(self, realm):
         self.__request.unauthorized("Did not work")

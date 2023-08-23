@@ -20,7 +20,7 @@ from zope.testing import cleanup
 
 
 @implementer(IFTPCredentials)
-class FTPCredentials(object):
+class FTPCredentials:
     __doc__ = IFTPCredentials.__doc__
 
     def __init__(self, credentials):
