@@ -27,7 +27,7 @@ setup(
     name='zope.login',
     version='3.0.dev0',
     author='Zope Foundation and Contributors',
-    author_email='zope-dev@zope.org',
+    author_email='zope-dev@zope.dev',
     description='Login helpers for zope.publisher / authentication.',
     long_description=(
         read('README.rst')
@@ -41,11 +41,7 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Zope Public License',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
@@ -63,6 +59,7 @@ setup(
     packages=find_packages('src'),
     package_dir={'': 'src'},
     namespace_packages=['zope'],
+    python_requires='>=3.7',
     install_requires=[
         'setuptools',
         'zope.authentication',
@@ -79,7 +76,6 @@ setup(
             'Sphinx',
         ],
     },
-    test_suite='zope.login',
     include_package_data=True,
     zip_safe=False,
 )
