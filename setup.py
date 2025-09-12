@@ -14,7 +14,6 @@
 
 import os
 
-from setuptools import find_packages
 from setuptools import setup
 
 
@@ -25,7 +24,7 @@ def read(*rnames):
 
 setup(
     name='zope.login',
-    version='3.2.dev0',
+    version='4.0.dev0',
     author='Zope Foundation and Contributors',
     author_email='zope-dev@zope.dev',
     description='Login helpers for zope.publisher / authentication.',
@@ -56,9 +55,6 @@ setup(
     ],
     url='http://github.com/zopefoundation/zope.login',
     license='ZPL-2.1',
-    packages=find_packages('src'),
-    package_dir={'': 'src'},
-    namespace_packages=['zope'],
     python_requires='>=3.9',
     install_requires=[
         'setuptools',
@@ -69,7 +65,7 @@ setup(
     ],
     extras_require={
         'test': [
-            'zope.testrunner',
+            'zope.testrunner >= 6.4',
             'zope.testing',
         ],
         'docs': [
