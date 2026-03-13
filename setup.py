@@ -57,7 +57,6 @@ setup(
     license='ZPL-2.1',
     python_requires='>=3.10',
     install_requires=[
-        'setuptools',
         'zope.authentication',
         'zope.component',
         'zope.interface',
